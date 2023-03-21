@@ -14,7 +14,7 @@
       }
       .el--3 {
         background-color: green;
-        height: 1x; /*Высота елемента зависит от контента либо от назначенной высоты*/
+        height: 150px; /*Высота елемента зависит от контента либо от назначенной высоты*/
       }
       .el--4 {
         background-color: goldenrod;
@@ -40,18 +40,21 @@
         margin: 40px;
 
         /* CSS GRID */
-        display: grid;
-        
-      /* grid-template-columns: 1fr 1fr  1fr 1fr; Свойство делит на две колонки по 250 и 150px . FR свойсвство делает резиновыми колоны*/
-      /* grid-template-columns: 1fr 1fr 1fr auto; Свойвство AUTO в СSS grid растягивает на ширину контента айтема*/
-       grid-template-columns: repeat(4, 1fr) ; /*Чтоб не писать 4 раза 1fr */
-       grid-template-rows: 1fr auto; /*Высота зависит от назначенной высоты АЙТЕМА если нет то на высоту контента*/
-       height: 500px;
-       /*GAP 30px*/
-       column-gap: 30px; /*Отступ между рядами БОКОВОЙ*/
-       row-gap: 80px;   /*Отступ между рядами Вертикальный*/
 
+        display: none;
         
+        /* grid-template-columns: 1fr 1fr  1fr 1fr; Свойство делит на две колонки по 250 и 150px . FR свойсвство делает резиновыми колоны*/
+        /* grid-template-columns: 1fr 1fr 1fr auto; Свойвство AUTO в СSS grid растягивает на ширину контента айтема*/
+
+       grid-template-columns: repeat(4, 1fr); /*Чтоб не писать 4 раза 1fr */
+       grid-template-rows: 1fr 1fr; /*Высота зависит от назначенной высоты АЙТЕМА если нет то на высоту контента*/
+       column-gap: 20px; /*Отступ между рядами БОКОВОЙ*/ /*GAP 30px*/
+       row-gap: 40px;   /*Отступ между рядами Вертикальный*/
+      }
+
+      .el--8 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 1 ; /*Изменение грид айтема из 8 на 2 место в сетке*/
       }
 
       .container--2 {
@@ -60,11 +63,29 @@
         background-color: black;
         font-size: 40px;
         margin: 100px;
-
         width: 1000px;
         height: 600px;
+    
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        gap: 50px;
+        /*Aligning tracks inside container:border:
+        distibute empty space*/;
+        justify-content: center; /*ROW AXIS*/
+        align-content:center; /*Vertical AXIS*/
+
+        /*Aligning items INSICE cells: 
+        moving items inside cells*/
+        align-items: center; /*ROW AXIS*/
+        justify-items: center; /*Vertical AXIS*/
+      }
+
+      .el--3 {
+        align-self: end;
+        justify-self: end;
       }
     </style>
   </head>
